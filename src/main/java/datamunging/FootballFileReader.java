@@ -25,7 +25,7 @@ public class FootballFileReader {
                 .filter(FootballFileReader::lineNotContainsOnlyDashes)
                 .map(FootballTeamGoals::parseLine)
                 .min(Comparator.comparing(FootballTeamGoals::diffBetweenGoals))
-                .orElseThrow(FileReader::throwNoDataFound)
+                .orElseThrow(FootballFileReader::throwNoDataFound)
                 .getName();
     }
 
